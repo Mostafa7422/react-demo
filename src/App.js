@@ -12,7 +12,7 @@ import CustomLoginPage from './CustomLoginPage';
 
 firebase.initializeApp(firebaseConfig);
 
-const settings = {context: 'dev', imagekey: "images", filekey: "files"}
+const settings = {context: 'users', imagekey: "images", filekey: "files"}
 
 
 const dataProvider = firebaseDataProvider(firebase, settings);
@@ -25,13 +25,13 @@ class App extends React.Component {
         dataProvider={dataProvider}
         // authProvider={authProvider}
       >
-   /*     <Resource
+     {/*  <Resource
           name="posts"
           list={PostList}
           show={PostShow}
           create={PostCreate}
           edit={PostEdit}
-        />*/
+        /> */}
         <Resource
           name="users"
           icon={UserIcon}
