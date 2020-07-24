@@ -25,13 +25,13 @@ class App extends React.Component {
         dataProvider={dataProvider}
         // authProvider={authProvider}
       >
-        <Resource
+   /*     <Resource
           name="posts"
           list={PostList}
           show={PostShow}
           create={PostCreate}
           edit={PostEdit}
-        />
+        />*/
         <Resource
           name="users"
           icon={UserIcon}
