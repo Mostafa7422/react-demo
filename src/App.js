@@ -8,11 +8,11 @@ import firebase from 'firebase';
 import UserIcon from '@material-ui/icons/People';
 
 import { firebaseConfig } from './FIREBASE_CONFIG';
-import CustomLoginPage from './CustomLoginPage';
+//import CustomLoginPage from './CustomLoginPage';
 
 firebase.initializeApp(firebaseConfig);
 
-const settings = {context: 'dev', imagekey: "images", filekey: "files"}
+const settings = {context: "users", imagekey: "images", filekey: "files"}
 
 
 const dataProvider = firebaseDataProvider(firebase, settings);
@@ -25,13 +25,13 @@ class App extends React.Component {
         dataProvider={dataProvider}
         // authProvider={authProvider}
       >
-        <Resource
-          name="posts"
+       {/*  <Resource
+          name="Chats"
           list={PostList}
           show={PostShow}
           create={PostCreate}
           edit={PostEdit}
-        />
+        /> */}
         <Resource
           name="users"
           icon={UserIcon}
