@@ -2,39 +2,28 @@ import * as React from "react";
 import { PostList, PostShow, PostCreate, PostEdit } from "./posts";
 import { UserList, UserShow, UserCreate, UserEdit } from "./users";
 import { Admin, Resource } from "react-admin";
-import {
-  FirebaseDataProvider,
-  FirebaseAuthProvider
-} from "react-admin-firebase";
+import firebaseDataProvider from 'ra-data-firebase-client'
+
 import firebase from 'firebase';
 import UserIcon from '@material-ui/icons/People';
 
 import { firebaseConfig } from './FIREBASE_CONFIG';
 import CustomLoginPage from './CustomLoginPage';
 
-const firebaseApp = firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 
-const options = {
-  logging: true,
-  // rootRef: 'rootrefcollection/QQG2McwjR2Bohi9OwQzP',
-  app: firebaseApp,
-  // watch: ['posts'];
-  // dontwatch: ['comments'];
-  persistence: 'local',
-  // disableMeta: true
-  dontAddIdFieldToDoc: true
-}
+const settings = {context: 'dev', imagekey: "images", filekey: "files"}
 
-const authProvider = FirebaseAuthProvider(firebaseConfig, options);
-const dataProvider = FirebaseDataProvider(firebaseConfig, options);
+
+const dataProvider = firebaseDataProvider(firebase, settings);
 
 class App extends React.Component {
   render() {
     return (
       <Admin
-        loginPage={CustomLoginPage}
+        // loginPage={CustomLoginPage}
         dataProvider={dataProvider}
-        authProvider={authProvider}
+        // authProvider={authProvider}
       >
         <Resource
           name="posts"
