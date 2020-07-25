@@ -12,7 +12,7 @@ import CustomLoginPage from './CustomLoginPage';
 
 firebase.initializeApp(firebaseConfig);
 
-const settings = {context: 'users', imagekey: "images", filekey: "files"}
+const settings = {}
 
 
 const dataProvider = firebaseDataProvider(firebase, settings);
