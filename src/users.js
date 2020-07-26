@@ -26,10 +26,10 @@ const UserFilter = (props) => (
 export const UserList = (props) => (
   <List {...props} filters={<UserFilter />}>
     <Datagrid>
+    <TextField source="uid" />
       <TextField source="name" />
-      <TextField source="age" />
-      <TextField source="createdate" />
-      <TextField source="lastupdate" />
+      <TextField source="email" />
+      <TextField source="Created" />
       <ShowButton label="" />
       <EditButton label="" />
       <DeleteButton label="" redirect={false}/>
@@ -40,9 +40,9 @@ export const UserList = (props) => (
 export const UserShow = (props) => (
   <Show {...props}>
     <SimpleShowLayout>
-      <TextField source="id" />
+      <TextField source="uid" />
       <TextField source="name" />
-      <TextField source="age" />
+      <TextField source="email" />
     </SimpleShowLayout>
   </Show>
 );
@@ -50,9 +50,9 @@ export const UserShow = (props) => (
 export const UserCreate = (props) => (
   <Create {...props} >
     <SimpleForm>
-      <TextInput source="id" />
+      <TextInput source="uid" />
       <TextInput source="name" />
-      <TextInput source="age" />
+      <TextInput source="email" />
     </SimpleForm>
   </Create>
 );
@@ -60,11 +60,8 @@ export const UserCreate = (props) => (
 export const UserEdit = (props) => (
   <Edit {...props}>
     <SimpleForm>
-      <TextInput disabled source="id" />
-      <TextInput disabled source="createdate" />
-      <TextInput disabled source="lastupdate" />
+      <TextInput disabled source="email" />
       <TextInput source="name" />
-      <TextInput source="age" />
     </SimpleForm>
   </Edit>
 );
